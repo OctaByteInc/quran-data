@@ -22,7 +22,7 @@ for single_file in onlyfiles:
     edition.type = 'Text'
     edition.format = 'translation'
     edition.direction = direction
-    # edition.save()
+    edition.save()
 
     file_location = './data/' + single_file
     f = open(file_location, "r")
@@ -51,13 +51,13 @@ for single_file in onlyfiles:
         translation.ayah_id = trans_id
         translation.edition_id = edition_id
         translation.text = text
-        # translation.save(batch=trans_batch)
+        translation.save(batch=trans_batch)
 
         count += 1
 
         if(count >= 400):
-            # trans_batch.commit()
+            trans_batch.commit()
             count = 0
 
     print('============Complete=============================')
-    # trans_batch.commit()
+    trans_batch.commit()
