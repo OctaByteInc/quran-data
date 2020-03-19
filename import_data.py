@@ -11,6 +11,7 @@ onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
 for single_file in onlyfiles:
     detail = single_file.replace('.txt', '')
+    # print(detail)
     edition_id, language, name, translator, direction = detail.split('_')
 
     edition = Edition()
@@ -21,7 +22,7 @@ for single_file in onlyfiles:
     edition.type = 'Text'
     edition.format = 'translation'
     edition.direction = direction
-    edition.save()
+    # edition.save()
 
     file_location = './data/' + single_file
     f = open(file_location, "r")
@@ -31,8 +32,16 @@ for single_file in onlyfiles:
     line_count = 0
 
     for line in f:
-        surah_number, ayat_number, text = line.split('|')
-        print('writing line...' + str(line_count))
+
+        if not line.strip():
+            print('file end')
+            break
+
+        # print(line)
+        surah_number, ayat_number, *line_text = line.split('|')
+        text = ' '.join(line_text)
+        print('For File '+edition_id +
+              ' writing line...' + str(line_count))
         line_count += 1
 
         trans_id = surah_number + '-' + ayat_number
@@ -42,12 +51,13 @@ for single_file in onlyfiles:
         translation.ayah_id = trans_id
         translation.edition_id = edition_id
         translation.text = text
-        translation.save(batch=trans_batch)
+        # translation.save(batch=trans_batch)
 
         count += 1
 
         if(count >= 400):
-            trans_batch.commit()
+            # trans_batch.commit()
             count = 0
 
-    trans_batch.commit()
+    print('============Complete=============================')
+    # trans_batch.commit()
