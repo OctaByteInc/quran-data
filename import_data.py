@@ -50,7 +50,7 @@ for single_file in onlyfiles:
         translation.id = edition_id + "_" + trans_id
         translation.ayah_id = trans_id
         translation.edition_id = edition_id
-        translation.text = text
+        translation.text = text.strip()
         translation.save(batch=trans_batch)
 
         count += 1
