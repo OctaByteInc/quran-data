@@ -99,3 +99,46 @@ image = Image()
 image.ayah_id = 'ayah-2'
 image.image = 'Image link for ayah-2'
 image.save()
+
+
+# import data for surah
+surah = Surah()
+surah.id = 'surah-1'
+surah.number = 1
+surah.name = 'surah-1-name'
+surah.english_name = 'surah-1-english-name'
+surah.number_of_ayahs = 7
+surah.revelation_type = 'Mecca'
+surah.save()
+
+surah = Surah()
+surah.id = 'surah-2'
+surah.number = 2
+surah.name = 'surah-2-name'
+surah.english_name = 'surah-2-english-name'
+surah.number_of_ayahs = 7
+surah.revelation_type = 'Mecca'
+surah.save()
+
+
+# import data for translation
+translation = Translation()
+translation.id = 'translation-ayah-1-edition-1'
+translation.ayah_id = 'ayah-1'
+translation.edition_id = 'edition-1'
+translation.text = 'Translation for ayah-1 edition-1'
+translation.save()
+
+translation = Translation()
+translation.id = 'translation-ayah-1-edition-2'
+translation.ayah_id = 'ayah-1'
+translation.edition_id = 'edition-2'
+translation.text = 'Translation for ayah-1 edition-2'
+translation.save()
+
+translation = Translation()
+translation.id = 'translation-ayah-2-edition-1'
+translation.ayah_id = 'ayah-2'
+translation.edition_id = 'edition-1'
+translation.text = 'Translation for ayah-2 edition-1'
+translation.save()
