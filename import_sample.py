@@ -10,6 +10,7 @@ from models.translation import Translation
 audio = Audio()
 audio = 'audio-ayah-1-edition-1'
 audio.ayah_id = 'ayah-1'
+audio.ayah_number = 1
 audio.edition_id = 'edition-1'
 audio.type = 'Translation'
 audio.audio = 'Translation Audio for Ayah-1 Edition-1'
@@ -18,6 +19,7 @@ audio.save()
 audio = Audio()
 audio = 'audio-ayah-1-edition-2'
 audio.ayah_id = 'ayah-1'
+audio.ayah_number = 1
 audio.edition_id = 'edition-2'
 audio.type = 'Translation'
 audio.audio = 'Translation Audio for Ayah-1 Edition-2'
@@ -26,6 +28,7 @@ audio.save()
 audio = Audio()
 audio = 'audio-ayah-1-edition-1'
 audio.ayah_id = 'ayah-1'
+audio.ayah_number = 1
 audio.edition_id = 'edition-1'
 audio.type = 'Arabic'
 audio.audio = 'Translation Audio for Ayah-1 Edition-1'
@@ -34,6 +37,7 @@ audio.save()
 audio = Audio()
 audio = 'audio-ayah-2-edition-1'
 audio.ayah_id = 'ayah-2'
+audio.ayah_number = 2
 audio.edition_id = 'edition-1'
 audio.type = 'Translation'
 audio.audio = 'Translation Audio for Ayah-2 Edition-1'
@@ -125,6 +129,7 @@ surah.save()
 translation = Translation()
 translation.id = 'translation-ayah-1-edition-1'
 translation.ayah_id = 'ayah-1'
+translation.ayah_number = 1
 translation.edition_id = 'edition-1'
 translation.text = 'Translation for ayah-1 edition-1'
 translation.save()
@@ -132,6 +137,7 @@ translation.save()
 translation = Translation()
 translation.id = 'translation-ayah-1-edition-2'
 translation.ayah_id = 'ayah-1'
+translation.ayah_number = 1
 translation.edition_id = 'edition-2'
 translation.text = 'Translation for ayah-1 edition-2'
 translation.save()
@@ -139,6 +145,7 @@ translation.save()
 translation = Translation()
 translation.id = 'translation-ayah-2-edition-1'
 translation.ayah_id = 'ayah-2'
+translation.ayah_number = 2
 translation.edition_id = 'edition-1'
 translation.text = 'Translation for ayah-2 edition-1'
 translation.save()
