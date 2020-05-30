@@ -8,3 +8,6 @@ class Translation(Model):
     edition_id = TextField()
     ayah_number = NumberField()
     text = TextField()
+    
+    class Meta:
+        collection_name = "translations"
