@@ -4,4 +4,4 @@ from fireo.models import Model
 
 class Image(Model):
     ayah_id = IDField()
-    image = TextField()
+    link = TextField()
