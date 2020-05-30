@@ -13,3 +13,6 @@ class Ayah(Model):
     hizb_quarter = NumberField(int_only=True)
     sajda = BooleanField()
     arabic = TextField()
+
+    class Meta:
+        collection_name = "ayahs"
