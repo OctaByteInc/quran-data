@@ -13,3 +13,4 @@ class Surah(Model):
 
     class Meta:
         to_lowercase = True
+        collection_name = "surahs"
