@@ -9,3 +9,6 @@ class Audio(Model):
     edition_id = TextField()
     type = TextField()  # Translation or Arabic
     link = TextField()
+
+    class Meta:
+        collection_name = "audios"
