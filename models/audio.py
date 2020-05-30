@@ -8,4 +8,4 @@ class Audio(Model):
     ayah_number = NumberField()
     edition_id = TextField()
     type = TextField()  # Translation or Arabic
-    audio = TextField()
+    link = TextField()
