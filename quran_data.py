@@ -14,7 +14,7 @@ init_surah_number = 0
 
 #6237
 
-for n in range(1, 11):
+for n in range(1, 6237):
     resp = requests.get('http://api.alquran.cloud/v1/ayah/' + str(n))
 
     if resp.status_code == 200:
