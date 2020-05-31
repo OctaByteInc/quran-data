@@ -1,33 +1,16 @@
-lines = [
-    "",
-    "#=====================================================================",
-    "#",
-    "#  Quran Translation",
-    "#  Name: Ahmed Raza Khan",
-    "#  Translator: Ahmed Raza Khan",
-    "#  Language: English",
-    "#  ID: en.ahmedraza",
-    "#  Last Update: July 17, 2011",
-    "#  Source: Tanzil.net",
-    "#",
-    "#=====================================================================",
-    ""
-]
+import requests
+import fireo
+from models.ayah import Ayah
+from models.surah import Surah
 
-for line in lines:
 
-    if not line.strip():
-        continue
+resp = requests.get('http://api.alquran.cloud/v1/ayah/1161')
 
-    if line[0] == '#':
-        if "Name" in line:
-            translator_name = line.split(':')[1]
-            print(translator_name)
-        elif "Language" in line:
-            language = line.split(':')[1]
-            print(language)
-        elif "ID" in line:
-            edition_id = line.split(':')[1].strip()
-            print(edition_id)
-        else:
-            continue
+data = resp.json()['data']
+
+if type(data["sajda"]) is bool:
+    is_sajda = data["sajda"]
+else:
+    is_sajda = True
+
+print(is_sajda)

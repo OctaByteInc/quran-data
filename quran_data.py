@@ -32,7 +32,12 @@ for n in range(1, 6237):
         ayah.manzil = data["manzil"]
         ayah.ruku = data["ruku"]
         ayah.hizb_quarter = data["hizbQuarter"]
-        ayah.sajda = data["sajda"]
+
+        if type(data["sajda"]) is bool:
+            ayah.sajda = data["sajda"]
+        else:
+            ayah.sajda = True
+
         ayah.arabic = data["text"]
 
         ayah.save(batch=ayah_batch)
